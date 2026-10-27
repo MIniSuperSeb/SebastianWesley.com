@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0f">
+<title>Sebastian Wesley</title>
+<meta name="description" content="Sebastian Wesley: biomedical engineering student at Cal Poly SLO who builds compatibility layers, pixel-art games and tools.">
+<meta property="og:title" content="Sebastian Wesley">
+<meta property="og:description" content="Sebastian Wesley: biomedical engineering student at Cal Poly SLO who builds compatibility layers, pixel-art games and tools.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0c0f'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-weight='900' font-size='15' text-anchor='middle' fill='%23e8b84c'%3ESW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Pixelify+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add("pre")</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+<div id="glow"></div>
+<canvas id="field" aria-hidden="true"></canvas>
+<div id="bar"></div>
+<div class="cur" id="cur"></div>
+<div id="wipe" aria-hidden="true"></div>
+
+<nav>
+  <a class="brand" href="#top" data-go="#top"><i></i>SEBASTIAN WESLEY</a>
+  <div class="links mono">
+    <a href="journey.html">Journey</a>
+    <a href="work.html">Work</a>
+    <a href="workshop.html">Workshop</a>
+    <a href="projects.html">Projects</a>
+    <a href="abroad.html">Abroad</a>
+    <a href="#contact" data-go="#contact">Contact</a>
+  </div>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i></i><i></i></button>
+</nav>
+<div class="menu" id="menu" aria-label="Site menu">
+    <a href="index.html" style="--i:0" aria-current="page"><small>01</small>Home</a>
+    <a href="journey.html" style="--i:1"><small>02</small>Journey</a>
+    <a href="work.html" style="--i:2"><small>03</small>Work</a>
+    <a href="workshop.html" style="--i:3"><small>04</small>Workshop</a>
+    <a href="projects.html" style="--i:4"><small>05</small>Projects</a>
+    <a href="abroad.html" style="--i:5"><small>06</small>Abroad</a>
+    <a href="#contact" style="--i:6"><small>07</small>Contact</a>
+    <div class="mfoot mono">sebastian.leo.wesley@gmail.com</div>
+</div>
+
+<main id="top" data-start="paper">
+<!-- HERO -->
+<header class="hero pad" data-world="paper">
+  <div class="float f1" data-d="1.0"><div class="fi"><img src="assets/verjuice/grapes.jpg" alt=""></div></div>
+  <div class="float f2" data-d=".6"><div class="fi"><img class="px" src="assets/scenes/windmill.webp" alt=""></div></div>
+  <div class="float f3 sprite" data-d="1.3"><div class="fi"><img class="px" src="assets/cast/the-hero.webp" alt=""></div></div>
+  <div class="float f4" data-d=".8"><div class="fi"><img class="px" src="assets/scenes/village.webp" alt=""></div></div>
+  <div class="float f5 sprite" data-d="1.5"><div class="fi"><img class="px" src="assets/cast/cinder-sovereign.webp" alt=""></div></div>
+  <div class="float f6" data-d=".5"><div class="fi"><img class="px" src="assets/scenes/market.webp" alt=""></div></div>
+
+  <div class="hero-eyebrow mono"><span><b>●</b> Cal Poly SLO</span><span>Biomedical Engineering</span><span>San Luis Obispo, CA</span></div>
+  <h1 class="hero-name" aria-label="Sebastian Wesley"><span class="ln" data-split>Sebastian</span><span class="ln" data-split>Wesley</span></h1>
+  <div class="hero-meta">
+    <div class="build" aria-live="polite"><span class="lead">I build</span><span class="win"><span class="role">compatibility layers.</span></span></div>
+    <div class="hero-copy">
+      <p>Second-year biomedical engineering student heading for bioinstrumentation. I machine parts, write systems code and draw pixel-art worlds.</p>
+      <a class="scrollcue mono" href="#journey" data-go="#journey"><i></i>Scroll</a>
+    </div>
+  </div>
+</header>
+
+<div class="marq" data-world="paper"><div class="marq-in"><span>Analyze</span><span>Design</span><span>Build</span><span>Machine</span><span>Validate</span><span>Serve</span><span>Ship</span></div></div>
+<div class="marq out"><div class="marq-in" data-rev><span>Verjuice</span><span>Chickens VS Llamas</span><span>PDF annotation</span><span>Reheating container</span><span>Japan</span></div></div>
+
+
+<!-- ABOUT -->
+<section class="about pad" data-world="paper">
+  <p class="statement" id="statement">I got here by taking things apart. First computers I bought broken and resold, then robot parts on a mill and lathe, and now compatibility layers, games and tools for my family's business.</p>
+  <div class="stats">
+    <div class="stat"><b data-count="6000" data-pre="$">$6,000</b><span>gross from buying, repairing and reselling computers in 2020</span></div>
+    <div class="stat"><b data-count="3">3</b><span>FIRST Robotics seasons on the manufacturing team</span></div>
+    <div class="stat"><b data-count="19">19</b><span>units this term, alongside a part-time job</span></div>
+    <div class="stat"><b data-count="98">98</b><span>characters in the game so far, Chickens VS Llamas</span></div>
+  </div>
+</section>
+
+
+<!-- RANGE -->
+<section class="range pad" id="range" data-world="paper">
+  <div class="kicker mono">Range</div>
+  <h2 class="h2">Not just<br>one thing</h2>
+  <div class="rg" id="rg">
+    <article class="rp on" style="--c:var(--sky)" tabindex="0">
+      <span class="rn mono">01</span><h3>Engineering</h3>
+      <div class="rp-art art-ecg"><svg class="ecg" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true"><g class="ecg-g" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M0 40 H70 q8 -10 16 0 H110 l6 6 10 -46 12 70 8 -30 H170 q16 -16 32 0 H300" transform="translate(0)"/><path d="M0 40 H70 q8 -10 16 0 H110 l6 6 10 -46 12 70 8 -30 H170 q16 -16 32 0 H300" transform="translate(300)"/><path d="M0 40 H70 q8 -10 16 0 H110 l6 6 10 -46 12 70 8 -30 H170 q16 -16 32 0 H300" transform="translate(600)"/><path d="M0 40 H70 q8 -10 16 0 H110 l6 6 10 -46 12 70 8 -30 H170 q16 -16 32 0 H300" transform="translate(900)"/></g></svg></div>
+      <div class="rp-b"><p>Biomedical engineering at Cal Poly, heading for bioinstrumentation. Circuits, physics, cells, and the Medical Design Club.</p><a class="go mono" href="journey.html">The journey <span aria-hidden="true">→</span></a></div>
+    </article>
+    <article class="rp" style="--c:var(--lime)" tabindex="0">
+      <span class="rn mono">02</span><h3>Software</h3>
+      <div class="rp-art art-code"><pre aria-hidden="true">$ verjuice check
+&gt; verified, cited
+$ python cvl.py
+&gt; 98 characters
+$ _</pre></div>
+      <div class="rp-b"><p>Compatibility layers, a pixel-art game written without an engine, and tools for a real business.</p><a class="go mono" href="projects.html">The projects <span aria-hidden="true">→</span></a></div>
+    </article>
+    <article class="rp" style="--c:var(--mint)" tabindex="0">
+      <span class="rn mono">03</span><h3>Making</h3>
+      <div class="rp-art art-gear"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="50" cy="50" r="14"/><path d="M50 8 l5 10 h-10z M50 92 l5 -10 h-10z M8 50 l10 5 v-10z M92 50 l-10 5 v-10z M20 20 l10 4 -6 6z M80 80 l-10 -4 6 -6z M80 20 l-4 10 -6 -6z M20 80 l4 -10 6 6z"/><circle cx="50" cy="50" r="32"/></g></svg></div>
+      <div class="rp-b"><p>Three seasons on a robotics manufacturing team, mill and lathe time, and one very good cutting board.</p><a class="go mono" href="workshop.html">The workshop <span aria-hidden="true">→</span></a></div>
+    </article>
+    <article class="rp" style="--c:var(--cherry)" tabindex="0">
+      <span class="rn mono">04</span><h3>Service</h3>
+      <div class="rp-art art-q" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+      <div class="rp-b"><p>Taco Bell now, Dairy Queen before. Registers, rushes and real customers, next to a full engineering load.</p><a class="go mono" href="work.html">On the clock <span aria-hidden="true">→</span></a></div>
+    </article>
+    <article class="rp" style="--c:var(--brass)" tabindex="0">
+      <span class="rn mono">05</span><h3>Business</h3>
+      <div class="rp-art art-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="rp-b"><p>CTO of a family real estate business, vendor booths at JLW Designs, and a computer resale hustle that grossed $6,000.</p><a class="go mono" href="work.html#cto">The CTO work <span aria-hidden="true">→</span></a></div>
+    </article>
+  </div>
+</section>
+
+<!-- JOURNEY STRIP -->
+<section class="jstrip pad" id="journey" data-world="brass">
+  <div class="kicker mono">Experience &amp; education</div>
+  <h2 class="h2">Journey</h2>
+  <div class="strip" id="strip">
+    <i class="sline"></i>
+    <a class="stop" href="journey.html"><span class="yy">2020</span><b>Computer@eBay</b><small>Bought, fixed and resold computers. $6,000 gross.</small></a>
+    <a class="stop" href="workshop.html"><span class="yy">FRC</span><b>Robotics manufacturing</b><small>Three seasons machining robot parts.</small></a>
+    <a class="stop" href="work.html"><span class="yy">2023</span><b>JLW Designs</b><small>Vendor booths and product displays.</small></a>
+    <a class="stop" href="journey.html"><span class="yy">2025</span><b>Cal Poly BME</b><small>Biomedical engineering, bioinstrumentation track.</small></a>
+    <a class="stop" href="work.html#cto"><span class="yy">NOW</span><b>CTO, family business</b><small>Building tools for real estate.</small></a>
+    <a class="stop" href="abroad.html"><span class="yy">NEXT</span><b>Singapore, then Japan?</b><small>J-term abroad, accepted.</small></a>
+  </div>
+  <div class="sect-link"><a class="btn" href="journey.html">Open the full journey <span aria-hidden="true">→</span></a></div>
+</section>
+
+<!-- PROJECTS HUB -->
+<section class="projects pad" id="projects" data-world="paper">
+  <div class="kicker mono">Things I'm building</div>
+  <h2 class="h2">Projects</h2>
+  <div class="orbit-wrap">
+    <div class="orbit" id="orbit">
+      <div class="ringline a"></div><div class="ringline b"></div>
+      <div class="ring r2" id="r2"></div>
+      <div class="ring r1" id="r1">
+        <div class="node" style="--i:0"><a class="nc" href="verjuice.html" data-info="Verjuice|Windows games on Apple Silicon, checked against a cited compatibility database." style="--nc-c:var(--lime)"><img src="assets/verjuice/grapes.jpg" alt="Verjuice"></a></div>
+        <div class="node" style="--i:1"><a class="nc warm" href="cvl.html" data-info="Chickens VS Llamas|A pixel-art game, 98 characters and counting." style="--nc-c:var(--ember)"><img class="px" src="assets/cast/the-hero.webp" alt="Chickens VS Llamas"></a></div>
+        <div class="node" style="--i:2"><a class="nc" href="annotator.html" data-info="PDF annotation tool|Markup for real estate documents, built for my family's business." style="--nc-c:var(--brass)"><div class="glyph-doc"><i></i><i></i><i></i><i></i></div></a></div>
+        <div class="node" style="--i:3"><a class="nc" href="concept.html" data-info="Reheating container|Classified." style="--nc-c:var(--violet)"><span class="glyph-lock">[ ? ]</span></a></div>
+      </div>
+      <div class="core"><div>SW</div></div>
+    </div>
+    <div class="orbit-info" id="orbitInfo"><b>Pick one</b><span>Hover a project, click to open it. The small ones are the Chickens VS Llamas cast.</span></div>
+  </div>
+<div class="sect-link pad" style="padding:0"><a class="btn ghost" href="projects.html">All projects <span aria-hidden="true">→</span></a></div>
+</section>
+
+
+<!-- OFF THE CLOCK -->
+<section class="off pad" id="off" data-world="paper">
+  <div class="kicker mono">Outside the editor</div>
+  <h2 class="h2">Off the clock</h2>
+  <div class="mosaic">
+    <figure class="ph m1"><div class="ph-in"><img src="assets/photos/mountain.webp" alt="Sebastian smiling on a rocky peak above a sea of clouds at sunset" loading="lazy"><figcaption class="mono"><b>FIG. 01</b> Above the clouds</figcaption></div></figure>
+    <figure class="ph m2"><div class="ph-in"><img src="assets/photos/japan.webp" alt="Sebastian eating sushi at a table in Japan" loading="lazy" style="object-position:50% 30%"><figcaption class="mono"><b>FIG. 02</b> Lunch in Japan</figcaption></div></figure>
+    <figure class="ph m3"><div class="ph-in"><img src="assets/photos/diploma.webp" alt="Sebastian in a graduation gown holding a diploma" loading="lazy" style="object-position:50% 20%"><figcaption class="mono"><b>FIG. 03</b> Phoenix Country Day School, class of 2025</figcaption></div></figure>
+    <figure class="ph m4"><div class="ph-in"><img src="assets/photos/mom.webp" alt="Sebastian and his mom working at laptops at the kitchen table" loading="lazy" style="object-position:50% 30%"><figcaption class="mono"><b>FIG. 04</b> Working on the business with my mom</figcaption></div></figure>
+    <div class="m5"><p>I like building things I can hold and things I can only run. A few frames from the parts of life that don't fit in a repo.</p><a class="btn ghost" href="abroad.html">Where I'm headed <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ABROAD TEASER -->
+<section class="abroad-t pad" id="abroad" data-world="sky">
+  <div class="kicker mono">Accepted, not yet gone</div>
+  <h2 class="h2">Next stop</h2>
+  <svg class="route route-d" viewBox="0 -20 1000 340" role="img" aria-labelledby="dT dD"><title id="dT">Planned route: SLO, Singapore, SLO, Japan</title><desc id="dD">01 San Luis Obispo, then 02 Singapore for J-term in January 2027 through CIEE (accepted), then 03 back to San Luis Obispo for spring, then 04 Japan for a hoped-for year abroad, Fall 2027 to Spring 2028, not confirmed yet.</desc><defs><mask id="d1" maskUnits="userSpaceOnUse" x="-60" y="-60" width="1200" height="1200"><path class="rv" d="M110 170 C 380 70, 700 110, 870 215" fill="none" stroke="#fff" stroke-width="12"/></mask><mask id="d2" maskUnits="userSpaceOnUse" x="-60" y="-60" width="1200" height="1200"><path class="rv" d="M870 215 C 680 300, 330 300, 110 186" fill="none" stroke="#fff" stroke-width="12"/></mask><mask id="d3" maskUnits="userSpaceOnUse" x="-60" y="-60" width="1200" height="1200"><path class="rv" d="M110 158 C 300 10, 520 -10, 700 60" fill="none" stroke="#fff" stroke-width="12"/></mask></defs><g class="ghost" fill="none" stroke="#7fb4e8" stroke-width="2" stroke-dasharray="2 8" opacity=".25"><path d="M110 170 C 380 70, 700 110, 870 215"/><path d="M870 215 C 680 300, 330 300, 110 186"/><path d="M110 158 C 300 10, 520 -10, 700 60"/></g><g class="legs-v" fill="none" stroke="#7fb4e8" stroke-width="3" stroke-linecap="round"><path d="M110 170 C 380 70, 700 110, 870 215" mask="url(#d1)"/><path d="M870 215 C 680 300, 330 300, 110 186" mask="url(#d2)"/><path d="M110 158 C 300 10, 520 -10, 700 60" mask="url(#d3)" stroke-dasharray="7 8"/></g><g><circle cx="110" cy="172" r="8" fill="#7fb4e8"/><text class="num" x="88" y="150" text-anchor="end">01 · 03</text><text x="88" y="176" text-anchor="end">SLO</text><text class="sub" x="88" y="194" text-anchor="end">CAL POLY</text></g><g><circle cx="870" cy="215" r="7" fill="#7fb4e8"/><text class="num" x="892" y="196">02</text><text x="892" y="220">SIN</text><text class="sub" x="892" y="238">SINGAPORE</text></g><g><circle cx="700" cy="60" r="7" fill="var(--ink)" stroke="#7fb4e8" stroke-width="2" stroke-dasharray="3 3"/><text class="num" x="722" y="42">04</text><text x="722" y="64">JPN</text><text class="sub" x="722" y="82">JAPAN</text></g><text class="lg" x="560" y="150" text-anchor="middle">J-TERM · JAN 2027 · ACCEPTED</text><text class="lg" x="500" y="254" text-anchor="middle">BACK FOR SPRING</text><text class="lg" x="405" y="6" text-anchor="middle">THE HOPE · FALL 2027 – SPRING 2028 · NOT CONFIRMED YET</text><circle class="rdot" r="5" cx="0" cy="0" fill="#ece4d2" opacity="0"/></svg>
+  <svg class="route route-m" viewBox="0 0 360 530" role="img" aria-labelledby="mT mD"><title id="mT">Planned route: SLO, Singapore, SLO, Japan</title><desc id="mD">01 San Luis Obispo, then 02 Singapore for J-term in January 2027 through CIEE (accepted), then 03 back to San Luis Obispo for spring, then 04 Japan for a hoped-for year abroad, Fall 2027 to Spring 2028, not confirmed yet.</desc><defs><mask id="m1" maskUnits="userSpaceOnUse" x="-60" y="-60" width="1200" height="1200"><path class="rv" d="M44 40 C 104 90, 104 140, 44 190" fill="none" stroke="#fff" stroke-width="12"/></mask><mask id="m2" maskUnits="userSpaceOnUse" x="-60" y="-60" width="1200" height="1200"><path class="rv" d="M44 190 C -10 240, -10 290, 44 340" fill="none" stroke="#fff" stroke-width="12"/></mask><mask id="m3" maskUnits="userSpaceOnUse" x="-60" y="-60" width="1200" height="1200"><path class="rv" d="M44 340 C 104 390, 104 440, 44 490" fill="none" stroke="#fff" stroke-width="12"/></mask></defs><g class="ghost" fill="none" stroke="#7fb4e8" stroke-width="2" stroke-dasharray="2 8" opacity=".25"><path d="M44 40 C 104 90, 104 140, 44 190"/><path d="M44 190 C -10 240, -10 290, 44 340"/><path d="M44 340 C 104 390, 104 440, 44 490"/></g><g class="legs-v" fill="none" stroke="#7fb4e8" stroke-width="3" stroke-linecap="round"><path d="M44 40 C 104 90, 104 140, 44 190" mask="url(#m1)"/><path d="M44 190 C -10 240, -10 290, 44 340" mask="url(#m2)"/><path d="M44 340 C 104 390, 104 440, 44 490" mask="url(#m3)" stroke-dasharray="7 8"/></g><g><circle cx="44" cy="40" r="8" fill="#7fb4e8"/><text class="num" x="124" y="26">01</text><text class="big" x="124" y="48">SLO</text><text class="sub" x="124" y="68">CAL POLY</text></g><g><circle cx="44" cy="190" r="8" fill="#7fb4e8"/><text class="num" x="124" y="176">02</text><text class="big" x="124" y="198">SIN</text><text class="sub" x="124" y="218">SINGAPORE · JAN 2027</text></g><g><circle cx="44" cy="340" r="8" fill="#7fb4e8"/><text class="num" x="124" y="326">03</text><text class="big" x="124" y="348">SLO</text><text class="sub" x="124" y="368">BACK FOR SPRING</text></g><g><circle cx="44" cy="490" r="8" fill="var(--ink)" stroke="#7fb4e8" stroke-width="2" stroke-dasharray="3 3"/><text class="num" x="124" y="476">04</text><text class="big" x="124" y="498">JPN</text><text class="sub" x="124" y="518">JAPAN · NOT CONFIRMED YET</text></g><text class="lg" x="124" y="122">J-TERM · CIEE · ACCEPTED</text><text class="lg" x="124" y="422">HOPED FOR · 2027–28</text><circle class="rdot" r="5" cx="0" cy="0" fill="#ece4d2" opacity="0"/></svg>
+  <p class="lede2">Singapore this J-term through CIEE. Then, if it works out, <em>a year in Japan.</em></p>
+  <div class="sect-link" style="margin-top:0"><a class="btn" href="abroad.html">See the route <span aria-hidden="true">→</span></a></div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact pad" id="contact" data-world="paper">
+  <div class="kicker mono">Contact</div>
+  <h2 class="say"><span>Say</span><span>hello.</span></h2>
+  <div class="mail"><span class="lab mono">Personal</span><span class="addr">sebastian.leo.wesley@gmail.com</span><button class="btn ghost copy" data-copy="sebastian.leo.wesley@gmail.com">Copy</button></div>
+  <div class="mail"><span class="lab mono">Cal Poly</span><span class="addr">sewesley@calpoly.edu</span><button class="btn ghost copy" data-copy="sewesley@calpoly.edu">Copy</button></div>
+  <div class="foot mono"><span>© 2026 Sebastian Wesley</span><span>San Luis Obispo, CA · Cave Creek, AZ</span><span class="tagline">Hand-coded, hand-machined, occasionally fueled by Taco Bell.</span></div>
+</section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sebastianwesley",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./portfolio",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "sebastianwesley.com", "custom_domain": true },
+    { "pattern": "www.sebastianwesley.com", "custom_domain": true }
+  ]
+}

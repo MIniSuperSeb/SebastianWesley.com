@@ -1,0 +1,9 @@
+# internal notes and the legacy generator stay local
+PORTFOLIO-PLAN-*.md
+build/
+
+# tooling
+.wrangler/
+.claude/
+node_modules/
+.DS_Store

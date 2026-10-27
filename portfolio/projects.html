@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Projects · Sebastian Wesley</title>
+<meta name="description" content="Verjuice, Chickens VS Llamas, a PDF annotation tool and a classified reheating container.">
+<meta name="theme-color" content="#0b0c0f">
+<meta property="og:title" content="Projects · Sebastian Wesley">
+<meta property="og:description" content="Verjuice, Chickens VS Llamas, a PDF annotation tool and a classified reheating container.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0c0f'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-weight='900' font-size='15' text-anchor='middle' fill='%23e8b84c'%3ESW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Pixelify+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add("pre")</script>
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<div id="glow"></div>
+<canvas id="field" aria-hidden="true"></canvas>
+<div id="bar"></div>
+<div class="cur" id="cur"></div>
+<div id="wipe" aria-hidden="true"></div>
+
+<nav>
+  <a class="brand" href="index.html"><i></i>SEBASTIAN WESLEY</a>
+  <div class="links mono">
+    <a href="journey.html">Journey</a>
+    <a href="work.html">Work</a>
+    <a href="workshop.html">Workshop</a>
+    <a href="projects.html" aria-current="page">Projects</a>
+    <a href="abroad.html">Abroad</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i></i><i></i></button>
+</nav>
+<div class="menu" id="menu" aria-label="Site menu">
+    <a href="index.html" style="--i:0"><small>01</small>Home</a>
+    <a href="journey.html" style="--i:1"><small>02</small>Journey</a>
+    <a href="work.html" style="--i:2"><small>03</small>Work</a>
+    <a href="workshop.html" style="--i:3"><small>04</small>Workshop</a>
+    <a href="projects.html" style="--i:4" aria-current="page"><small>05</small>Projects</a>
+    <a href="abroad.html" style="--i:5"><small>06</small>Abroad</a>
+    <a href="index.html#contact" style="--i:6"><small>07</small>Contact</a>
+    <div class="mfoot mono">sebastian.leo.wesley@gmail.com</div>
+</div>
+
+<main id="top" data-start="paper">
+<section class="phead pad" data-world="paper">
+  <div class="kicker mono">Things I'm building</div>
+  <h1 class="h2">Projects</h1>
+  <p>Games, compatibility layers and tools for my family's business. Pick one to see how it works.</p>
+</section>
+<div class="pad plist">
+  <a class="pcard" href="verjuice.html" data-world="lime" style="--c:var(--lime)">
+    <div>
+      <div class="pc-top"><span class="pc-n mono">01</span><span class="pill mono"><i></i>Live · free &amp; open source</span></div>
+      <h2 class="pc-t">Verjuice</h2>
+      <p>Windows games on Apple Silicon, checked against a cited compatibility database before you buy them.</p>
+      <div class="chips"><span class="chip">macOS</span><span class="chip">Wine-based</span><span class="chip">Steam · Epic · GOG</span></div>
+      <span class="pc-go mono">Open project <span aria-hidden="true">→</span></span>
+    </div>
+    <div class="pv pv-v"><img class="zoom" src="assets/verjuice/library.jpg" alt="The Verjuice library with status labels" loading="lazy"><img class="g" src="assets/verjuice/grapes.jpg" alt=""></div>
+  </a>
+  <a class="pcard cvl" href="cvl.html" data-world="ember" style="--c:var(--ember)">
+    <div>
+      <div class="pc-top"><span class="pc-n mono">02</span><span class="pill mono"><i></i>In development</span></div>
+      <h2 class="pc-t">Chickens VS Llamas</h2>
+      <p>A pixel-art game with 98 characters so far, built in Python and Pygame with no engine.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">Pygame</span><span class="chip">pixel art</span></div>
+      <span class="pc-go mono">Open project <span aria-hidden="true">→</span></span>
+    </div>
+    <div class="pv pv-c"><img class="zoom" src="assets/scenes/map.webp" alt="Pixel-art world map" loading="lazy"><img class="sp sp1" src="assets/cast/the-hero.webp" alt=""><img class="sp sp2" src="assets/cast/cinder-sovereign.webp" alt=""></div>
+  </a>
+  <a class="pcard" href="annotator.html" data-world="brass" style="--c:var(--brass)">
+    <div>
+      <div class="pc-top"><span class="pc-n mono">03</span><span class="pill mono"><i></i>Built for a family business</span></div>
+      <h2 class="pc-t">PDF Annotation Tool</h2>
+      <p>Pin notes to the exact spot on a listing sheet, so documents stop travelling as screenshots and email chains.</p>
+      <div class="chips"><span class="chip">real estate</span><span class="chip">shared notes</span><span class="chip">shared version in planning</span></div>
+      <span class="pc-go mono">Open project <span aria-hidden="true">→</span></span>
+    </div>
+    <div class="pv pv-a"><div class="doc"><h4>Purchase agreement</h4><div class="dl" style="width:96%"></div><div class="dl" style="width:90%"></div><div class="dl hl" style="width:82%"></div><div class="dl" style="width:94%"></div><div class="dl" style="width:60%"></div><div class="dl" style="width:92%"></div><div class="pin"><i></i><span>Check closing date</span></div><div class="stamp">REVIEWED</div></div></div>
+  </a>
+  <a class="pcard" href="concept.html" data-world="violet" style="--c:var(--violet)">
+    <div>
+      <div class="pc-top"><span class="pc-n mono">04</span><span class="pill mono"><i></i>Classified</span></div>
+      <h2 class="pc-t">Reheating Container</h2>
+      <p>I could tell you more, but then it wouldn't be classified.</p>
+      <div class="chips"><span class="chip">clearance: one person</span></div>
+      <span class="pc-go mono">Open file <span aria-hidden="true">→</span></span>
+    </div>
+    <div class="pv pv-k"><div class="bp"><svg viewBox="0 0 600 480" aria-hidden="true"><g fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="7 7"><rect x="140" y="170" width="320" height="170" rx="26"/><rect x="124" y="140" width="352" height="42" rx="14"/><path d="M190 340 v26 h220 v-26"/></g></svg><div class="scan"></div><span class="classified">Classified</span></div></div>
+  </a>
+  <div class="pcard soon" data-world="paper">
+    <div class="pc-top"><span class="pc-n mono">05</span><span class="pill mono"><i></i>Next</span></div>
+    <h2 class="pc-t">More in the workshop</h2>
+    <p>New projects land here as they leave the idea stage.</p>
+  </div>
+</div>
+
+<div class="pad"><a class="nextp" href="abroad.html" data-world="paper"><span class="lab mono">Next</span><b>Abroad <span aria-hidden="true">→</span></b></a></div>
+<div class="pad"><div class="foot mono" style="margin-top:0;padding-bottom:40px"><span>© 2026 Sebastian Wesley</span><span>San Luis Obispo, CA · Cave Creek, AZ</span><span class="tagline">Hand-coded, hand-machined, occasionally fueled by Taco Bell.</span></div></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
