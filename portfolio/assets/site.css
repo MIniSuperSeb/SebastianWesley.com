@@ -212,6 +212,7 @@ nav::before{content:"";position:absolute;inset:0;background:linear-gradient(var(
 .c-gold{background:linear-gradient(#e9c97a,#a8853a)}.c-green{background:linear-gradient(#b6dc6a,#6f9a2c)}.c-cork{background:linear-gradient(#d2b48a,#9c7c55)}.c-wax{background:linear-gradient(#b13a48,#6e1a25)}
 .pq{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.05;color:var(--world);margin:4px 0 14px}
 .shot figcaption{white-space:nowrap}
+.elsewhere{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,3vw,34px)}
 @media (max-width:600px){.caps li{grid-template-columns:22px 1fr;row-gap:2px}.caps li span{grid-column:2}.shot figcaption{font-size:.56rem;left:6px;bottom:5px;padding:3px 7px}}
 
 /* CvL */
