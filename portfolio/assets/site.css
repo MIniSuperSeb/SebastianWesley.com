@@ -612,3 +612,4 @@ nav::before{content:"";position:absolute;inset:0;background:linear-gradient(var(
 .jc .more{margin-top:auto;padding-top:14px;display:inline-flex;gap:8px;color:var(--world);text-decoration:none;font-family:var(--f-mono);font-size:.72rem}
 .foot .tagline{flex-basis:100%;color:var(--paper-dim)}
 @media (prefers-reduced-motion:reduce){.ecg-g,.art-gear svg,.art-q i,.art-bars i{animation:none}}
+.ph figcaption a{color:inherit;text-decoration:underline;text-underline-offset:2px;pointer-events:auto;position:relative;z-index:2}
