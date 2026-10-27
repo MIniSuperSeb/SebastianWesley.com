@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Verjuice · Sebastian Wesley</title>
-<meta name="description" content="Verjuice checks a Windows game against a cited compatibility database, then makes it run on your Mac.">
+<meta name="description" content="Verjuice runs Windows games on Apple Silicon Macs, and its Cellar app shows what each one has actually done, with the evidence.">
 <meta name="theme-color" content="#0b0c0f">
 <meta property="og:title" content="Verjuice · Sebastian Wesley">
-<meta property="og:description" content="Verjuice checks a Windows game against a cited compatibility database, then makes it run on your Mac.">
+<meta property="og:description" content="Verjuice runs Windows games on Apple Silicon Macs, and its Cellar app shows what each one has actually done, with the evidence.">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0c0f'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-weight='900' font-size='15' text-anchor='middle' fill='%23e8b84c'%3ESW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,25 +54,35 @@
     <a class="crumb mono" href="projects.html">← All projects</a>
     <div class="chap-head">
       <img class="grapes" src="assets/verjuice/grapes.jpg" alt="Verjuice grape cluster logo">
-      <div><span class="pill mono"><i></i>Live · free &amp; open source</span><h2 class="chap-title">Verjuice</h2></div>
+      <div><span class="pill mono"><i></i>Pre-release · open source soon</span><h2 class="chap-title">Verjuice</h2></div>
     </div>
     <div class="chap-grid">
       <div class="chap-copy">
         <p class="lede">Know if it runs <em>before you buy it.</em></p>
-        <p>Verjuice checks a Windows game against a cited compatibility database, then makes it run on your Mac. No guessing, and no pretending a title works when it doesn't.</p>
-        <p>Every game carries an honest status. A title that launches but hasn't been played through is labelled <i>Renders · gameplay unverified</i>. One that can't run is labelled <i>Refused</i>.</p>
+        <p>Verjuice runs Windows games on Apple Silicon Macs. Its app, the Cellar, lays your library out as a rack of bottles, and each bottle's capsule says what that game has actually done on a Mac.</p>
+        <ul class="caps">
+          <li><i class="c-gold"></i><b>Gold foil</b><span>Verified: played on my own Mac, with the run cited.</span></li>
+          <li><i class="c-green"></i><b>Green</b><span>Runs: launches and renders, gameplay unverified.</span></li>
+          <li><i class="c-cork"></i><b>Bare cork</b><span>Still corked: nobody has checked it yet.</span></li>
+          <li><i class="c-wax"></i><b>Red wax</b><span>Sealed: refused, with the reason and the evidence.</span></li>
+        </ul>
+        <p class="pq">Honest refusals beat guesses.</p>
+        <p>When a game can't run, usually because of anti-cheat, its bottle stays sealed and shows the test that proved it. You can still break the seal and play anyway, after a plain warning. Verjuice never works around anti-cheat, DRM or licensing.</p>
         <dl class="facts">
           <div><dt>Platform</dt><dd>macOS on Apple Silicon</dd></div>
-          <div><dt>Approach</dt><dd>Wine-based, with a per-game fix history</dd></div>
-          <div><dt>Library</dt><dd>Steam, Epic and GOG sources</dd></div>
+          <div><dt>App</dt><dd>Native SwiftUI, on a Python core</dd></div>
+          <div><dt>Approach</dt><dd>Wine, with a graphics backend picked per game and fixes it can undo</dd></div>
+          <div><dt>Database</dt><dd>Cited results from my own hardware runs</dd></div>
+          <div><dt>Price</dt><dd>Free, GPL-3.0-or-later, funded by donations</dd></div>
+          <div><dt>Privacy</dt><dd>No accounts, no telemetry</dd></div>
         </dl>
         <a class="btn" href="https://verjuice.app" target="_blank" rel="noopener">Visit verjuice.app <span aria-hidden="true">↗</span></a>
       </div>
       <div class="stack" id="stack">
         <div class="stack-in">
-          <figure class="shot s3"><img src="assets/verjuice/site.jpg" alt="The Verjuice website hero: Know if it runs before you buy it." loading="lazy"></figure>
-          <figure class="shot s1"><img src="assets/verjuice/library.jpg" alt="The Verjuice library showing 195 Steam games with status labels" loading="lazy"><figcaption class="mono">Library · 195 games</figcaption></figure>
-          <figure class="shot s2"><img src="assets/verjuice/provenance.jpg" alt="Compatibility and fix provenance panel for a game that is running" loading="lazy"><figcaption class="mono">Fix provenance</figcaption></figure>
+          <figure class="shot s1"><img src="assets/verjuice/rack.jpg" alt="The Cellar's rack: games shown as bottles on wooden shelves, each with a coloured capsule" loading="lazy"><figcaption class="mono">The Rack</figcaption></figure>
+          <figure class="shot s3"><img src="assets/verjuice/bottle.jpg" alt="Tasting notes for Vampire Hunters: runs, verified on this Mac, with the cited run log" loading="lazy"><figcaption class="mono">Verified · cited</figcaption></figure>
+          <figure class="shot s2"><img src="assets/verjuice/seal.jpg" alt="The Before you break the seal dialog for Elden Ring, explaining the anti-cheat refusal with its evidence" loading="lazy"><figcaption class="mono">Break the seal</figcaption></figure>
         </div>
       </div>
     </div>
