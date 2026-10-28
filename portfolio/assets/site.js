@@ -76,9 +76,11 @@ $$("[data-split]").forEach(function(l){
 });
 var roles=["compatibility layers.","pixel-art worlds.","tools for my family's business.","robot parts.","things that run on a Mac."];
 if(hasGsap&&!reduce&&$(".hero")){
-  gsap.from(".hero-name .ch",{yPercent:118,rotate:7,stagger:.04,duration:1.25,ease:"expo.out",delay:.1});
-  gsap.from(".hero-eyebrow > *, .build, .hero-copy > *",{y:24,opacity:0,stagger:.09,duration:1,ease:"power3.out",delay:.75});
-  gsap.from(".float .fi",{scale:.5,opacity:0,rotate:function(i){return i%2?10:-10},stagger:.09,duration:1.2,ease:"back.out(1.5)",delay:.85});
+  /* Keep the mobile hero visible at first paint. Desktop keeps its text entrance. */
+  if(fine){
+    gsap.from(".hero-name .ch",{yPercent:118,rotate:7,stagger:.025,duration:.7,ease:"expo.out"});
+    gsap.from(".hero-eyebrow > *, .build, .hero-copy > *",{y:24,stagger:.04,duration:.6,ease:"power3.out"});
+  }
   var role=$(".role"),ri=0;
   setInterval(function(){
     gsap.to(role,{yPercent:-110,opacity:0,duration:.35,ease:"power2.in",onComplete:function(){
@@ -107,7 +109,8 @@ var st=$("#statement");
 if(st){
   var words=st.textContent.trim().split(/\s+/); st.textContent="";
   words.forEach(function(w){var s=document.createElement("span");s.className="w";s.textContent=w;st.appendChild(s)});
-  if(hasGsap&&!reduce) gsap.fromTo($$(".w",st),{opacity:.2},{opacity:1,stagger:.12,ease:"none",scrollTrigger:{trigger:st,start:"top 82%",end:"bottom 52%",scrub:true}});
+  /* The unrevealed words still need enough contrast to read. */
+  if(hasGsap&&!reduce) gsap.fromTo($$(".w",st),{opacity:.6},{opacity:1,stagger:.12,ease:"none",scrollTrigger:{trigger:st,start:"top 82%",end:"bottom 52%",scrub:true}});
 }
 if(hasGsap&&!reduce) $$("[data-count]").forEach(function(el){
   var end=+el.getAttribute("data-count"),pre=el.getAttribute("data-pre")||"",o={v:0};
@@ -123,7 +126,7 @@ if(hasGsap&&$(".j-track")){
     var track=$(".j-track"),sec=$(".journey"),rail=$(".j-rail i");
     var dist=function(){return Math.max(0,track.scrollWidth-innerWidth)};
     var tween=gsap.to(track,{x:function(){return -dist()},ease:"none",scrollTrigger:{trigger:sec,start:"top top",end:function(){return "+="+dist()},pin:true,scrub:.6,anticipatePin:1,invalidateOnRefresh:true,onUpdate:function(s){rail.style.transform="scaleX("+s.progress+")"}}});
-    $$(".jc").forEach(function(c){gsap.from(c,{y:50,opacity:.25,duration:.8,ease:"power3.out",scrollTrigger:{trigger:c,containerAnimation:tween,start:"left 92%",toggleActions:"play none none none"}})});
+    $$(".jc").forEach(function(c){gsap.from(c,{y:50,duration:.8,ease:"power3.out",scrollTrigger:{trigger:c,containerAnimation:tween,start:"left 92%",toggleActions:"play none none none"}})});
   });
   mm.add("(max-width: 860px), (prefers-reduced-motion: reduce)",function(){
     var rail=$(".j-rail i");
@@ -137,7 +140,7 @@ if(hasGsap) initWorlds();
 (function(){
   var r1=$("#r1"),r2=$("#r2"),info=$("#orbitInfo"); if(!r1) return;
   var sats=["the-hero","cinder-sovereign","bellows","brotato","penguin","nanny","general-gorge","bunny-post","galloway","dame-buttercup","goldfish","freed-donkey"];
-  sats.forEach(function(s,i){var d=document.createElement("div");d.className="sat";d.style.setProperty("--i",i);var im=document.createElement("img");im.src="assets/cast/"+s+".webp";im.alt="";im.loading="lazy";d.appendChild(im);r2.appendChild(d)});
+  sats.forEach(function(s,i){var d=document.createElement("div");d.className="sat";d.style.setProperty("--i",i);var im=document.createElement("img");im.src="assets/cast/"+s+".webp";im.alt="";im.loading="lazy";im.width=183;im.height=190;d.appendChild(im);r2.appendChild(d)});
   var ang=0,hold=false;
   $$(".nc",r1).forEach(function(n){
     var set=function(){var p=n.getAttribute("data-info").split("|");info.innerHTML="<b></b><span></span>";info.firstChild.textContent=p[0];info.lastChild.textContent=p[1];hold=true};
@@ -174,7 +177,7 @@ if(hasGsap) initWorlds();
     grid.innerHTML="";
     C[k].forEach(function(c){
       var d=document.createElement("div");d.className="cc";
-      var im=document.createElement("img");im.src="assets/cast/"+c[0]+".webp";im.alt=c[1]+", pixel-art character";im.loading="lazy";
+      var im=document.createElement("img");im.src="assets/cast/"+c[0]+".webp";im.alt=c[1]+", pixel-art character";im.loading="lazy";im.width=183;im.height=190;
       var t=document.createElement("div");var b=document.createElement("b");b.textContent=c[1];var s=document.createElement("span");s.textContent=c[2];t.appendChild(b);t.appendChild(s);
       d.appendChild(im);d.appendChild(t);grid.appendChild(d);
     });
@@ -221,13 +224,14 @@ if(hasGsap&&!reduce){
       dot.setAttribute("cx",pt.x);dot.setAttribute("cy",pt.y);dot.setAttribute("opacity",o.p>.01&&o.p<n-.01?1:0);
     }},0);
   });
-  $$(".pola").forEach(function(p,i){gsap.from(p,{y:80,rotate:0,opacity:.2,duration:.9,delay:i*.1,ease:"power3.out",scrollTrigger:{trigger:".polas",start:"top 90%"}})});
+  $$(".pola").forEach(function(p,i){gsap.from(p,{y:80,rotate:0,duration:.9,delay:i*.1,ease:"power3.out",scrollTrigger:{trigger:".polas",start:"top 90%"}})});
 }
 
 /* ---------- generic reveals ---------- */
 if(hasGsap&&!reduce){
   $$(".chap-head, .chap-copy, .leg, .sk, .mail, .say span, .kicker, .h2, .nextp").forEach(function(el){
-    gsap.from(el,{y:44,opacity:.15,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%",once:true}});
+    /* Animate position only: headings and contact details remain legible. */
+    gsap.from(el,{y:44,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%",once:true}});
   });
 }
 
@@ -298,13 +302,10 @@ function sel(b){var a=b.parentNode.querySelector(".addr");if(!a) return;var r=do
   var wipe=$("#wipe"),go=null;
   function open(){
     root.classList.remove("pre");
-    if(hasGsap&&!reduce&&wipe){
-      gsap.set(wipe,{scaleY:1,transformOrigin:"50% 0%"});
-      gsap.to(wipe,{scaleY:0,duration:.85,ease:"power4.inOut",delay:.05});
-    } else if(wipe){wipe.style.transform="scaleY(0)"}
+    /* Arrival never covers loaded content; the wipe is only used when leaving. */
+    if(wipe) wipe.style.transform="scaleY(0)";
   }
   open();
-  setTimeout(function(){root.classList.remove("pre")},2500);
   addEventListener("pageshow",function(e){if(e.persisted){if(wipe&&hasGsap) gsap.set(wipe,{scaleY:0});go=null;toTop(true)}});
   document.addEventListener("click",function(e){
     var a=e.target.closest&&e.target.closest("a[href]"); if(!a||e.defaultPrevented) return;

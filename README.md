@@ -4,6 +4,12 @@ Personal portfolio site for Sebastian Wesley. Static HTML, CSS and JS (GSAP + Sc
 
 - `portfolio/` is the published site: one HTML file per page, with shared `assets/site.css` and `assets/site.js`.
 - Hosted on Cloudflare as a Worker serving static assets; see `wrangler.jsonc`.
+- Fonts and animation libraries are self-hosted under `portfolio/assets/fonts/`
+  and `portfolio/assets/vendor/`, with their license notices. Versioned files in
+  these directories use long-lived browser caching via `portfolio/_headers`;
+  use new filenames when updating them.
+- The homepage paints immediately on mobile. Desktop text entrances, animated
+  pixel art, scroll effects and outgoing page transitions remain enabled.
 
 ## Preview locally
 
