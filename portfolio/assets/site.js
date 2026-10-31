@@ -5,7 +5,7 @@ var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 var fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
 var root=document.documentElement;
 var hasGsap=!!window.gsap&&!!window.ScrollTrigger;
-if(hasGsap) gsap.registerPlugin(ScrollTrigger);
+if(hasGsap){gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true})}
 /* pages always open at the top (or at #hash): never restore the last page's offset */
 if("scrollRestoration" in history) history.scrollRestoration="manual";
 
@@ -40,7 +40,9 @@ function initWorlds(){
 (function(){
   var cv=$("#field"),ctx=cv.getContext("2d"),W=0,H=0,dpr=1,mx=-999,my=-999,sy=0,GAP=36;
   function size(){dpr=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
-  size(); addEventListener("resize",size);
+  size(); var lastW=W,lastH=H;
+  /* mobile URL-bar show/hide fires resize with a small height change; resizing the canvas then clears it and flickers */
+  addEventListener("resize",function(){if(innerWidth===lastW&&Math.abs(innerHeight-lastH)<160) return; lastW=innerWidth;lastH=innerHeight;size()});
   addEventListener("pointermove",function(e){mx=e.clientX;my=e.clientY},{passive:true});
   function frame(t){
     ctx.clearRect(0,0,W,H);
@@ -82,6 +84,8 @@ if(hasGsap&&!reduce&&$(".hero")){
     gsap.from(".hero-eyebrow > *, .build, .hero-copy > *",{y:24,stagger:.04,duration:.6,ease:"power3.out"});
   }
   var role=$(".role"),ri=0;
+  /* reserve the size of the longest phrase so the line never reflows when the text changes */
+  var win=role.parentNode; roles.forEach(function(t){var g=document.createElement("span");g.className="role-ghost";g.setAttribute("aria-hidden","true");g.textContent=t;win.appendChild(g)});
   setInterval(function(){
     gsap.to(role,{yPercent:-110,opacity:0,duration:.35,ease:"power2.in",onComplete:function(){
       ri=(ri+1)%roles.length; role.textContent=roles[ri];
@@ -125,7 +129,7 @@ if(hasGsap&&$(".j-track")){
   mm.add("(min-width: 861px) and (prefers-reduced-motion: no-preference)",function(){
     var track=$(".j-track"),sec=$(".journey"),rail=$(".j-rail i");
     var dist=function(){return Math.max(0,track.scrollWidth-innerWidth)};
-    var tween=gsap.to(track,{x:function(){return -dist()},ease:"none",scrollTrigger:{trigger:sec,start:"top top",end:function(){return "+="+dist()},pin:true,scrub:.6,anticipatePin:1,invalidateOnRefresh:true,onUpdate:function(s){rail.style.transform="scaleX("+s.progress+")"}}});
+    var tween=gsap.to(track,{x:function(){return -dist()},ease:"none",scrollTrigger:{trigger:sec,start:"top top",end:function(){return "+="+dist()},pin:true,scrub:true,invalidateOnRefresh:true,onUpdate:function(s){rail.style.transform="scaleX("+s.progress+")"}}});
     $$(".jc").forEach(function(c){gsap.from(c,{y:50,duration:.8,ease:"power3.out",scrollTrigger:{trigger:c,containerAnimation:tween,start:"left 92%",toggleActions:"play none none none"}})});
   });
   mm.add("(max-width: 860px), (prefers-reduced-motion: reduce)",function(){
@@ -217,7 +221,7 @@ if(hasGsap&&!reduce){
   $$(".route").forEach(function(svg){
     var rv=$$(".rv",svg),dot=$(".rdot",svg),n=rv.length,o={p:0}; if(!n) return;
     var L=rv.map(function(p){var l=p.getTotalLength();gsap.set(p,{strokeDasharray:l,strokeDashoffset:l});return l});
-    var tl=gsap.timeline({scrollTrigger:{trigger:svg,start:"top 82%",end:"bottom 40%",scrub:.8}});
+    var tl=gsap.timeline({scrollTrigger:{trigger:svg,start:"top 82%",end:"bottom 40%",scrub:true}});
     rv.forEach(function(p,i){tl.to(p,{strokeDashoffset:0,ease:"none",duration:1},i)});
     if(dot) tl.to(o,{p:n,ease:"none",duration:n,onUpdate:function(){
       var k=Math.min(n-1,Math.floor(o.p)),pt=rv[k].getPointAtLength(L[k]*Math.min(1,o.p-k));
@@ -282,7 +286,7 @@ function sel(b){var a=b.parentNode.querySelector(".addr");if(!a) return;var r=do
 (function(){
   var strip=$("#strip"); if(!strip) return;
   if(hasGsap&&!reduce){
-    ScrollTrigger.create({trigger:strip,start:"top 82%",end:"bottom 58%",scrub:.6,onUpdate:function(s){strip.style.setProperty("--p",s.progress.toFixed(3))}});
+    ScrollTrigger.create({trigger:strip,start:"top 82%",end:"bottom 58%",scrub:true,onUpdate:function(s){strip.style.setProperty("--p",s.progress.toFixed(3))}});
     gsap.from($$(".stop",strip),{y:44,opacity:0,stagger:.12,duration:.9,ease:"power3.out",clearProps:"transform,opacity",scrollTrigger:{trigger:strip,start:"top 85%",once:true}});
   } else strip.style.setProperty("--p",1);
 })();

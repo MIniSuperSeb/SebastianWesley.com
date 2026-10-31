@@ -98,7 +98,9 @@ nav::before{content:"";position:absolute;inset:0;background:linear-gradient(var(
 .hero-eyebrow b{color:var(--world);font-weight:500}
 .build{font-family:var(--f-display);font-weight:900;font-size:clamp(2.1rem,6.2vw,6rem);line-height:.98;text-transform:uppercase;display:flex;gap:.28em;flex-wrap:wrap;align-items:baseline;margin-bottom:clamp(14px,2.2vw,26px);position:relative;z-index:2}
 .build .lead{color:var(--brass)}
-.build .win{display:inline-block;overflow:hidden;vertical-align:bottom;color:var(--paper);min-width:1ch;padding-bottom:.06em}
+.build .win{display:inline-grid;overflow:hidden;vertical-align:bottom;color:var(--paper);min-width:1ch;padding-bottom:.06em}
+.build .win>*{grid-area:1/1}
+.role-ghost{visibility:hidden;pointer-events:none}
 .hero-copy{color:var(--paper-dim);max-width:46ch}
 .scrollcue{display:inline-flex;gap:10px;align-items:center;margin-top:20px;color:var(--paper);text-decoration:none}
 .scrollcue i{width:1px;height:34px;background:linear-gradient(var(--world),transparent);display:block;animation:cue 1.8s ease-in-out infinite;transform-origin:0 0}
