@@ -344,6 +344,9 @@ nav::before{content:"";position:absolute;inset:0;background:linear-gradient(var(
 .mail{display:flex;gap:12px 18px;align-items:center;flex-wrap:wrap;padding:18px 0;border-top:1px solid var(--line)}
 .mail:last-of-type{border-bottom:1px solid var(--line)}
 .mail .addr{font-family:var(--f-display);font-weight:800;font-size:clamp(1.5rem,4.2vw,3.4rem);line-height:1;user-select:all;word-break:break-all}
+.workwith{margin-top:clamp(18px,2.4vw,26px);max-width:62ch;color:var(--paper-dim);font-size:.95rem}
+.workwith .lab{display:block;color:var(--brass);margin-bottom:6px}
+.workwith a{color:var(--paper);text-decoration-color:var(--brass);text-underline-offset:3px}
 .mail .lab{width:9rem;color:var(--paper-dim)}
 .copy{margin-left:auto}
 .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:60px;color:var(--paper-dim)}
