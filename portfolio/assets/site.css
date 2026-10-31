@@ -96,10 +96,12 @@ nav::before{content:"";position:absolute;inset:0;background:linear-gradient(var(
 .hero-meta{display:grid;grid-template-columns:1fr;margin-top:clamp(18px,2.6vw,30px);align-items:end;position:relative;z-index:2}
 .hero-eyebrow{margin-bottom:clamp(12px,2vw,20px);display:flex;flex-wrap:wrap;gap:6px 22px;color:var(--paper-dim);position:relative;z-index:2}
 .hero-eyebrow b{color:var(--world);font-weight:500}
-.build{font-family:var(--f-display);font-weight:900;font-size:clamp(2.1rem,6.2vw,6rem);line-height:.98;text-transform:uppercase;display:flex;gap:.28em;flex-wrap:wrap;align-items:baseline;margin-bottom:clamp(14px,2.2vw,26px);position:relative;z-index:2}
-.build .lead{color:var(--brass)}
+.build{font-family:var(--f-display);font-weight:900;font-size:clamp(2rem,4.3vw,4.6rem);line-height:.98;text-transform:uppercase;display:block;margin-bottom:clamp(14px,2.2vw,26px);position:relative;z-index:2}
+.build .lead{display:block;color:var(--brass);font-size:1.3em;margin-bottom:.12em}
 .build .win{display:inline-grid;overflow:hidden;vertical-align:bottom;color:var(--paper);min-width:1ch;padding-bottom:.06em}
 .build .win>*{grid-area:1/1}
+/* the pictures on the right start around 70% of the width; keep the text clear of them */
+@media (min-width:761px){.build{max-width:68%}}
 .role-ghost{visibility:hidden;pointer-events:none}
 .hero-copy{color:var(--paper-dim);max-width:46ch}
 .scrollcue{display:inline-flex;gap:10px;align-items:center;margin-top:20px;color:var(--paper);text-decoration:none}
@@ -120,7 +122,7 @@ nav::before{content:"";position:absolute;inset:0;background:linear-gradient(var(
 .f6{top:56%;right:3%;width:clamp(70px,7.6vw,120px)}
 /* hero: the llama (f5) sits left of the chicken (f3), so the chicken turns to face it */
 .f3 img{scale:-1 1}
-@media (max-width:760px){.f4,.f5,.f6{display:none}.f1{top:13%}.f2{top:8%;right:34%}.f3{top:27%}}
+@media (max-width:760px){.f4,.f5,.f6{display:none}.f1{top:84px;right:24%}.f2{top:92px;right:46%}.f3{top:134px}}
 
 /* marquee */
 .marq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;white-space:nowrap}
